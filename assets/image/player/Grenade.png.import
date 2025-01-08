@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8lagybgoy7ua"
-path="res://.godot/imported/Shot_2.png-cd750ac9f23db0a16fa19f3b454e25f7.ctex"
+uid="uid://chlwmhphfm84m"
+path="res://.godot/imported/Grenade.png-3a12bd036bfeb4f35504eace72810485.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/Shot_2.png"
-dest_files=["res://.godot/imported/Shot_2.png-cd750ac9f23db0a16fa19f3b454e25f7.ctex"]
+source_file="res://assets/image/player/Grenade.png"
+dest_files=["res://.godot/imported/Grenade.png-3a12bd036bfeb4f35504eace72810485.ctex"]
 
 [params]
 

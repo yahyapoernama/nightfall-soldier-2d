@@ -1,11 +1,11 @@
 [gd_scene load_steps=42 format=3 uid="uid://clursx5m5ve55"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_tgypj"]
-[ext_resource type="Texture2D" uid="uid://dwlmnr5gig3e0" path="res://art/player/Dead.png" id="2_5a56y"]
-[ext_resource type="Texture2D" uid="uid://nsgg4jhnnyui" path="res://art/player/Idle.png" id="3_mhtvm"]
-[ext_resource type="Texture2D" uid="uid://bej0a82e76m81" path="res://art/player/Walk.png" id="5_5ukbq"]
-[ext_resource type="Texture2D" uid="uid://br72fa35bdvpt" path="res://art/player/Reload.png" id="5_vch26"]
-[ext_resource type="Texture2D" uid="uid://dg6mttb5tdohg" path="res://art/player/Shot_1.png" id="6_3s5p1"]
+[ext_resource type="Texture2D" uid="uid://dwlmnr5gig3e0" path="res://assets/image/player/Dead.png" id="2_5a56y"]
+[ext_resource type="Texture2D" uid="uid://nsgg4jhnnyui" path="res://assets/image/player/Idle.png" id="3_mhtvm"]
+[ext_resource type="Texture2D" uid="uid://bej0a82e76m81" path="res://assets/image/player/Walk.png" id="5_5ukbq"]
+[ext_resource type="Texture2D" uid="uid://br72fa35bdvpt" path="res://assets/image/player/Reload.png" id="5_vch26"]
+[ext_resource type="Texture2D" uid="uid://dg6mttb5tdohg" path="res://assets/image/player/Shot_1.png" id="6_3s5p1"]
 [ext_resource type="PackedScene" uid="uid://dcp88ua5lpi5y" path="res://scene/weapon.tscn" id="7_rmudg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avbfw"]

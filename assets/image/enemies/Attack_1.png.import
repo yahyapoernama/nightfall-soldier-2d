@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cb2ogwlu3lsea"
-path="res://.godot/imported/Bite.png-8952b8b4f7b83cd08fb63937217d701f.ctex"
+uid="uid://ojv31cq0rbfj"
+path="res://.godot/imported/Attack_1.png-01d70f63e99fb526a4e3687fc07786eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemies/Bite.png"
-dest_files=["res://.godot/imported/Bite.png-8952b8b4f7b83cd08fb63937217d701f.ctex"]
+source_file="res://assets/image/enemies/Attack_1.png"
+dest_files=["res://.godot/imported/Attack_1.png-01d70f63e99fb526a4e3687fc07786eb.ctex"]
 
 [params]
 

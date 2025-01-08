@@ -1,10 +1,10 @@
 [gd_scene load_steps=33 format=3 uid="uid://o3dw0dhbj7ds"]
 
 [ext_resource type="Script" path="res://script/enemy.gd" id="1_tpg1g"]
-[ext_resource type="Texture2D" uid="uid://ojv31cq0rbfj" path="res://art/enemies/Attack_1.png" id="2_xlawt"]
-[ext_resource type="Texture2D" uid="uid://cghpfsl348svf" path="res://art/enemies/Dead.png" id="3_7wb37"]
-[ext_resource type="Texture2D" uid="uid://c7g5gc16snvsp" path="res://art/enemies/Idle.png" id="4_3pbwa"]
-[ext_resource type="Texture2D" uid="uid://olsc5h0wg2y8" path="res://art/enemies/Walk.png" id="5_apkg6"]
+[ext_resource type="Texture2D" uid="uid://ojv31cq0rbfj" path="res://assets/image/enemies/Attack_1.png" id="2_xlawt"]
+[ext_resource type="Texture2D" uid="uid://cghpfsl348svf" path="res://assets/image/enemies/Dead.png" id="3_7wb37"]
+[ext_resource type="Texture2D" uid="uid://c7g5gc16snvsp" path="res://assets/image/enemies/Idle.png" id="4_3pbwa"]
+[ext_resource type="Texture2D" uid="uid://olsc5h0wg2y8" path="res://assets/image/enemies/Walk.png" id="5_apkg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qo44"]
 atlas = ExtResource("2_xlawt")
@@ -214,8 +214,7 @@ script = ExtResource("1_tpg1g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -13.505)
 sprite_frames = SubResource("SpriteFrames_h5xql")
-animation = &"attack"
-frame_progress = 0.7842
+animation = &"walk"
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

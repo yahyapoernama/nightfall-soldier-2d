@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cghpfsl348svf"
-path="res://.godot/imported/Dead.png-c302e8d27e758ac769e3f6a5e71930b4.ctex"
+uid="uid://cb2ogwlu3lsea"
+path="res://.godot/imported/Bite.png-165d559fe20466edf1848b02358905c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/enemies/Dead.png"
-dest_files=["res://.godot/imported/Dead.png-c302e8d27e758ac769e3f6a5e71930b4.ctex"]
+source_file="res://assets/image/enemies/Bite.png"
+dest_files=["res://.godot/imported/Bite.png-165d559fe20466edf1848b02358905c0.ctex"]
 
 [params]
 

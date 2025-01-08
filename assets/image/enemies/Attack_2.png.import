@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chlwmhphfm84m"
-path="res://.godot/imported/Grenade.png-07660a5548b051f923608d719254c3de.ctex"
+uid="uid://byd7nac5vfn7s"
+path="res://.godot/imported/Attack_2.png-f29928228dd59e0d98d6e5a45fcfd36e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/player/Grenade.png"
-dest_files=["res://.godot/imported/Grenade.png-07660a5548b051f923608d719254c3de.ctex"]
+source_file="res://assets/image/enemies/Attack_2.png"
+dest_files=["res://.godot/imported/Attack_2.png-f29928228dd59e0d98d6e5a45fcfd36e.ctex"]
 
 [params]
 
