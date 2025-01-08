@@ -1,0 +1,140 @@
+[gd_scene load_steps=12 format=3 uid="uid://cb72eo6na7jji"]
+
+[ext_resource type="Script" path="res://script/world.gd" id="1_cmxk4"]
+[ext_resource type="Texture2D" uid="uid://cjxsqx80v5xsm" path="res://art/background/Background.png" id="1_dssaa"]
+[ext_resource type="PackedScene" uid="uid://clursx5m5ve55" path="res://scene/player.tscn" id="1_pc2u1"]
+[ext_resource type="Script" path="res://script/health.gd" id="3_h32g1"]
+[ext_resource type="Script" path="res://script/score.gd" id="4_dwcs7"]
+[ext_resource type="Script" path="res://script/ammo.gd" id="4_yb1g5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpoge"]
+size = Vector2(171.77, 149.769)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyq61"]
+bg_color = Color(0, 0.709804, 0.462745, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0.709804, 0.462745, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e78rp"]
+bg_color = Color(0, 0.711377, 0.462383, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xstam"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.501961, 0.501961, 0.501961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6fcw"]
+bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MainScene" type="Node2D"]
+position = Vector2(566, 313)
+script = ExtResource("1_cmxk4")
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9, 10.5)
+scale = Vector2(6.695, 4.32)
+shape = SubResource("RectangleShape2D_bpoge")
+
+[node name="Player" parent="." instance=ExtResource("1_pc2u1")]
+position = Vector2(-500, 215)
+scale = Vector2(1.88, 1.88)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 55.0
+offset_bottom = 38.0
+text = "Health"
+
+[node name="Health" type="ProgressBar" parent="CanvasLayer/HealthLabel"]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 205.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dyq61")
+theme_override_styles/fill = SubResource("StyleBoxFlat_e78rp")
+max_value = 5.0
+step = 1.0
+value = 5.0
+rounded = true
+show_percentage = false
+script = ExtResource("3_h32g1")
+
+[node name="AmmoLabel" type="Label" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 60.0
+offset_right = 66.0
+offset_bottom = 83.0
+text = "Ammo"
+
+[node name="Ammo" type="ProgressBar" parent="CanvasLayer/AmmoLabel"]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 205.0
+offset_bottom = 27.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xstam")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v6fcw")
+max_value = 10.0
+step = 1.0
+value = 2.0
+rounded = true
+show_percentage = false
+script = ExtResource("4_yb1g5")
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer"]
+offset_left = 15.0
+offset_top = 105.0
+offset_right = 58.0
+offset_bottom = 128.0
+text = "Score"
+
+[node name="Score" type="Label" parent="CanvasLayer/ScoreLabel"]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 105.0
+offset_bottom = 23.0
+text = "0"
+script = ExtResource("4_dwcs7")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(584, 188)
+scale = Vector2(1.33621, 1.21248)
+texture = ExtResource("1_dssaa")
+
+[connection signal="child_entered_tree" from="." to="CanvasLayer/AmmoLabel/Ammo" method="_on_main_scene_child_entered_tree"]
+[connection signal="child_entered_tree" from="." to="CanvasLayer/ScoreLabel/Score" method="_on_main_scene_child_entered_tree"]
+[connection signal="health_signal" from="Player" to="CanvasLayer/HealthLabel/Health" method="_on_player_health_signal"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
