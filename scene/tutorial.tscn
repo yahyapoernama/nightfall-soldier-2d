@@ -1,0 +1,132 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp5x7w5257dni"]
+
+[ext_resource type="Script" path="res://script/tutorial.gd" id="1_820c7"]
+[ext_resource type="FontFile" uid="uid://cbuwds52i5a2d" path="res://assets/font/MotionControl-Bold.otf" id="2_qiinc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcnib"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.94902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkadd"]
+bg_color = Color(0.370364, 0.370365, 0.370364, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt34c"]
+bg_color = Color(0.231373, 0.231373, 0.231373, 1)
+
+[node name="Tutorial" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_820c7")
+
+[node name="OverlayPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.5
+offset_top = -240.0
+offset_right = 419.5
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lcnib")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OverlayPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -339.5
+offset_top = -90.0
+offset_right = -109.5
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="MoveLabel" type="Label" parent="OverlayPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 50
+text = "Move"
+
+[node name="FireLabel" type="Label" parent="OverlayPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 50
+text = "Fire"
+
+[node name="Reload" type="Label" parent="OverlayPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 50
+text = "Reload Ammo"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="OverlayPanel"]
+layout_mode = 2
+offset_left = 450.0
+offset_top = 150.0
+offset_right = 680.0
+offset_bottom = 343.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="MoveLabel" type="Label" parent="OverlayPanel/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 50
+text = "A (Left) and D (Right)"
+
+[node name="FireLabel" type="Label" parent="OverlayPanel/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 50
+text = "Left Click Mouse / Hold"
+
+[node name="Reload" type="Label" parent="OverlayPanel/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 50
+text = "R"
+
+[node name="Label" type="Label" parent="OverlayPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 100
+text = "TUTORIAL"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="OverlayPanel"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -118.5
+offset_top = -86.0
+offset_right = 117.5
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_qiinc")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_mkadd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_pt34c")
+text = "Close"
+
+[connection signal="pressed" from="OverlayPanel/CloseButton" to="." method="_on_close_button_pressed"]
