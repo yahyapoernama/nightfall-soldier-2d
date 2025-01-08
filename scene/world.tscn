@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=3 uid="uid://cb72eo6na7jji"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_cmxk4"]
-[ext_resource type="Texture2D" uid="uid://cjxsqx80v5xsm" path="res://assets/image/background/Background.png" id="1_dssaa"]
 [ext_resource type="PackedScene" uid="uid://clursx5m5ve55" path="res://scene/player.tscn" id="1_pc2u1"]
 [ext_resource type="Script" path="res://script/health.gd" id="3_h32g1"]
 [ext_resource type="Script" path="res://script/score.gd" id="4_dwcs7"]
 [ext_resource type="Script" path="res://script/ammo.gd" id="4_yb1g5"]
+[ext_resource type="Texture2D" uid="uid://cj188de48a5vc" path="res://assets/image/background/Background-Chaos.jpg" id="6_bku7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpoge"]
 size = Vector2(171.77, 149.769)
@@ -51,6 +51,13 @@ corner_radius_bottom_left = 5
 [node name="MainScene" type="Node2D"]
 position = Vector2(566, 313)
 script = ExtResource("1_cmxk4")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(579, 329)
+scale = Vector2(1.43029, 1.50446)
+texture = ExtResource("6_bku7p")
 
 [node name="Area2D" type="Area2D" parent="."]
 visible = false
@@ -126,26 +133,6 @@ offset_right = 105.0
 offset_bottom = 23.0
 text = "0"
 script = ExtResource("4_dwcs7")
-
-[node name="Tutorial" type="Label" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -242.0
-offset_top = 15.0
-offset_right = -11.0
-offset_bottom = 90.0
-grow_horizontal = 0
-text = "Walk     :  A (Left) and D (Right)
-Firing    : Left Click Mouse / Hold
-Reload  :  R"
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
-position = Vector2(584, 188)
-scale = Vector2(1.33621, 1.21248)
-texture = ExtResource("1_dssaa")
 
 [connection signal="child_entered_tree" from="." to="CanvasLayer/AmmoLabel/Ammo" method="_on_main_scene_child_entered_tree"]
 [connection signal="child_entered_tree" from="." to="CanvasLayer/ScoreLabel/Score" method="_on_main_scene_child_entered_tree"]
