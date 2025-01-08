@@ -38,7 +38,7 @@ func _ready():
 func _physics_process(delta: float):
 	# Dapatkan batas layar (Rect2) dalam koordinat global
 	var viewport_rect = get_viewport_rect()
-	var input_direction := Input.get_vector("turn_left", "turn_right", "turn_up", "turn_down")
+	var input_direction := Input.get_vector("turn_left", "turn_right", "", "")
 	var velocity = Vector2.ZERO  # Inisialisasi kecepatan
 	var current_speed = SPEED
 	if !PLAYER_DEAD:
