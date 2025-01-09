@@ -5,6 +5,8 @@ extends Node2D
 var ENEMY = preload("res://scene/enemy.tscn")
 var is_first_loop = true
 
+var pause_popup = preload("res://scene/pause.tscn")
+var pause_instantiate = null
 var gameover_popup = preload("res://scene/gameover.tscn")
 var gameover_instantiate = null
 
@@ -14,6 +16,12 @@ signal ammo_signal
 func _ready() -> void:
 	emit_signal("ammo_signal")
 	spawnEnemy()
+	
+	# Instance pop-up dan tambahkan ke scene
+	pause_instantiate = pause_popup.instantiate()
+	add_child(pause_instantiate)
+	pause_instantiate.hide_popup()  # Sembunyikan pop-up di awal
+	
 	gameover_instantiate = gameover_popup.instantiate()
 	add_child(gameover_instantiate)
 	gameover_instantiate.hide_popup()  # Sembunyikan pop-up di awal
