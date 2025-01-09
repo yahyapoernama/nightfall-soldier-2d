@@ -47,13 +47,13 @@ func _physics_process(delta: float):
 				animation_player.flip_h = input_direction.x < 0  # Membalik sprite jika bergerak ke kiri
 				change_direction(PLAYER_DIRECTION.LEFT)
 				position.x -= 5
-				animation_player.play("walk")	
+				animation_player.play("run")	
 				PLAYER_WALK = true
 			if Input.is_action_pressed("turn_right"):
 				animation_player.flip_h = input_direction.x < 0
 				change_direction(PLAYER_DIRECTION.RIGHT)
 				position.x += 5
-				animation_player.play("walk")
+				animation_player.play("run")
 				PLAYER_WALK = true
 			velocity = direction.normalized() * (input_direction.x + 100) * current_speed
 			$Reload.stop()
