@@ -1,0 +1,127 @@
+[gd_scene load_steps=8 format=3 uid="uid://dw7qdh6g0koer"]
+
+[ext_resource type="Script" path="res://script/gameover.gd" id="1_epjnc"]
+[ext_resource type="FontFile" uid="uid://b48n1o88y7scp" path="res://assets/font/MotionControl-Bold.otf" id="2_qmgc7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fch7"]
+bg_color = Color(0.121569, 0.121569, 0.121569, 0.94902)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tw8rt"]
+bg_color = Color(0.113725, 0.231373, 0.188235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qb5x"]
+bg_color = Color(0.0745098, 0.160784, 0.129412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c67rr"]
+bg_color = Color(0.32549, 0.180392, 0.101961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xewim"]
+bg_color = Color(0.211765, 0.109804, 0.054902, 1)
+
+[node name="Gameover" type="CanvasLayer"]
+script = ExtResource("1_epjnc")
+
+[node name="OverlayPanel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -419.5
+offset_top = -240.0
+offset_right = 419.5
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7fch7")
+
+[node name="Label" type="Label" parent="OverlayPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 10.0
+offset_bottom = 111.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.552962, 1.35969e-06, 4.81307e-07, 1)
+theme_override_fonts/font = ExtResource("2_qmgc7")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="OverlayPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.5
+offset_top = -96.5
+offset_right = 170.5
+offset_bottom = 96.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="ScoreLabel" type="Label" parent="OverlayPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qmgc7")
+theme_override_font_sizes/font_size = 50
+text = "Score"
+horizontal_alignment = 1
+
+[node name="ScoreValue" type="Label" parent="OverlayPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qmgc7")
+theme_override_font_sizes/font_size = 70
+text = "0"
+horizontal_alignment = 1
+
+[node name="HighscoreInfo" type="Label" parent="OverlayPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 5
+theme_override_fonts/font = ExtResource("2_qmgc7")
+theme_override_font_sizes/font_size = 50
+text = "Highsccore : 0"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="OverlayPanel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -206.5
+offset_top = -94.0
+offset_right = 205.5
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+
+[node name="PlayAgainButton" type="Button" parent="OverlayPanel/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_qmgc7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_tw8rt")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2qb5x")
+text = "Play Again"
+
+[node name="CloseButton" type="Button" parent="OverlayPanel/HBoxContainer"]
+process_mode = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_qmgc7")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/hover = SubResource("StyleBoxFlat_c67rr")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xewim")
+text = "Exit"
+
+[connection signal="pressed" from="OverlayPanel/HBoxContainer/PlayAgainButton" to="." method="_on_play_again_button_pressed"]
+[connection signal="pressed" from="OverlayPanel/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
