@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bp5x7w5257dni"]
 
 [ext_resource type="Script" path="res://script/tutorial.gd" id="1_820c7"]
-[ext_resource type="FontFile" uid="uid://cbuwds52i5a2d" path="res://assets/font/MotionControl-Bold.otf" id="2_qiinc"]
+[ext_resource type="FontFile" uid="uid://b48n1o88y7scp" path="res://assets/font/MotionControl-Bold.otf" id="2_qiinc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lcnib"]
 bg_color = Color(0.121569, 0.121569, 0.121569, 0.94902)
