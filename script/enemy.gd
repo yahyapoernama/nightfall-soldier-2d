@@ -74,11 +74,9 @@ func _on_animated_sprite_2d_animation_looped() -> void:
 	if player:
 		if !player.PLAYER_DEAD:
 			if animation_enemy.animation == "attack" && player.HEALTH_NOW > 0:
-				print("Animasi attack telah selesai 1 loop")
 				player.HEALTH_NOW -= 1
 				player.HEALTH_NOW = clamp(player.HEALTH_NOW, 0, player.HEALTH)
 				player.emit_signal("health_signal", player.HEALTH, player.HEALTH_NOW)
-				print("HP berkurang")
 			if player.HEALTH_NOW == 0:
 				player.PLAYER_DEAD = true
 				player.animation_player.play("dead")
