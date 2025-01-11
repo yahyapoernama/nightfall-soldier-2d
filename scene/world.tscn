@@ -1,15 +1,22 @@
-[gd_scene load_steps=13 format=3 uid="uid://cb72eo6na7jji"]
+[gd_scene load_steps=20 format=3 uid="uid://cb72eo6na7jji"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_cmxk4"]
 [ext_resource type="PackedScene" uid="uid://clursx5m5ve55" path="res://scene/player.tscn" id="1_pc2u1"]
 [ext_resource type="Script" path="res://script/health.gd" id="3_h32g1"]
 [ext_resource type="Script" path="res://script/score.gd" id="4_dwcs7"]
+[ext_resource type="Texture2D" uid="uid://c2lrugc3tfw1v" path="res://assets/image/icon/IconHealth.png" id="4_mrvmt"]
 [ext_resource type="Script" path="res://script/ammo.gd" id="4_yb1g5"]
 [ext_resource type="Texture2D" uid="uid://casykeh6l3fd7" path="res://assets/image/icon/IconPause.png" id="6_3hdt3"]
 [ext_resource type="Texture2D" uid="uid://cj188de48a5vc" path="res://assets/image/background/Background-Chaos.jpg" id="6_bku7p"]
+[ext_resource type="Texture2D" uid="uid://diev67abg631c" path="res://assets/image/icon/IconAmmo.png" id="6_q3du5"]
+[ext_resource type="Texture2D" uid="uid://42q2sbn0ofw6" path="res://assets/image/icon/IconScore.png" id="8_lct8s"]
+[ext_resource type="FontFile" uid="uid://b48n1o88y7scp" path="res://assets/font/MotionControl-Bold.otf" id="9_h1cbi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpoge"]
 size = Vector2(171.77, 149.769)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d8qd7"]
+texture = ExtResource("4_mrvmt")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyq61"]
 bg_color = Color(0, 0.709804, 0.462745, 0)
@@ -30,24 +37,30 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4y6a4"]
+texture = ExtResource("6_q3du5")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xstam"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(0.552941, 0.380392, 0.0509804, 0)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0.501961, 0.501961, 0.501961, 1)
+border_color = Color(0.552941, 0.380392, 0.0509804, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6fcw"]
-bg_color = Color(0.501961, 0.501961, 0.501961, 1)
+bg_color = Color(0.552941, 0.380392, 0.0509804, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4j181"]
+texture = ExtResource("8_lct8s")
 
 [node name="MainScene" type="Node2D"]
 position = Vector2(566, 313)
@@ -81,14 +94,14 @@ autostart = true
 [node name="HealthLabel" type="Label" parent="CanvasLayer"]
 offset_left = 15.0
 offset_top = 15.0
-offset_right = 55.0
-offset_bottom = 38.0
-text = "Health"
+offset_right = 42.0
+offset_bottom = 42.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_d8qd7")
 
 [node name="Health" type="ProgressBar" parent="CanvasLayer/HealthLabel"]
 layout_mode = 0
-offset_left = 65.0
-offset_right = 205.0
+offset_left = 40.0
+offset_right = 180.0
 offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_dyq61")
 theme_override_styles/fill = SubResource("StyleBoxFlat_e78rp")
@@ -102,14 +115,14 @@ script = ExtResource("3_h32g1")
 [node name="AmmoLabel" type="Label" parent="CanvasLayer"]
 offset_left = 15.0
 offset_top = 60.0
-offset_right = 66.0
-offset_bottom = 83.0
-text = "Ammo"
+offset_right = 42.0
+offset_bottom = 87.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4y6a4")
 
 [node name="Ammo" type="ProgressBar" parent="CanvasLayer/AmmoLabel"]
 layout_mode = 0
-offset_left = 65.0
-offset_right = 205.0
+offset_left = 40.0
+offset_right = 180.0
 offset_bottom = 27.0
 theme_override_styles/background = SubResource("StyleBoxFlat_xstam")
 theme_override_styles/fill = SubResource("StyleBoxFlat_v6fcw")
@@ -123,15 +136,17 @@ script = ExtResource("4_yb1g5")
 [node name="ScoreLabel" type="Label" parent="CanvasLayer"]
 offset_left = 15.0
 offset_top = 105.0
-offset_right = 58.0
-offset_bottom = 128.0
-text = "Score"
+offset_right = 42.0
+offset_bottom = 132.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_4j181")
 
 [node name="Score" type="Label" parent="CanvasLayer/ScoreLabel"]
 layout_mode = 0
-offset_left = 65.0
-offset_right = 105.0
+offset_left = 40.0
+offset_right = 80.0
 offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("9_h1cbi")
+theme_override_font_sizes/font_size = 30
 text = "0"
 script = ExtResource("4_dwcs7")
 
