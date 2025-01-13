@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://chxk2la05rssi"]
+[gd_scene load_steps=12 format=3 uid="uid://chxk2la05rssi"]
 
 [ext_resource type="FontFile" uid="uid://b48n1o88y7scp" path="res://assets/font/MotionControl-Bold.otf" id="1_3n68s"]
 [ext_resource type="Script" path="res://script/menu.gd" id="1_ehdk3"]
 [ext_resource type="Texture2D" uid="uid://bw4kqunasftnp" path="res://assets/image/background/MainMenu.jpg" id="2_4gxro"]
+[ext_resource type="Script" path="res://script/bgmmenu.gd" id="4_rqou5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8j5xq"]
 texture = ExtResource("2_4gxro")
@@ -123,6 +124,10 @@ theme_override_fonts/font = ExtResource("1_3n68s")
 theme_override_font_sizes/font_size = 30
 text = "v1.0"
 horizontal_alignment = 2
+
+[node name="BGMMenu" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+script = ExtResource("4_rqou5")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]

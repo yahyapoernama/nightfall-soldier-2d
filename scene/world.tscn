@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cb72eo6na7jji"]
+[gd_scene load_steps=21 format=3 uid="uid://cb72eo6na7jji"]
 
 [ext_resource type="Script" path="res://script/world.gd" id="1_cmxk4"]
 [ext_resource type="PackedScene" uid="uid://clursx5m5ve55" path="res://scene/player.tscn" id="1_pc2u1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://diev67abg631c" path="res://assets/image/icon/IconAmmo.png" id="6_q3du5"]
 [ext_resource type="Texture2D" uid="uid://42q2sbn0ofw6" path="res://assets/image/icon/IconScore.png" id="8_lct8s"]
 [ext_resource type="FontFile" uid="uid://b48n1o88y7scp" path="res://assets/font/MotionControl-Bold.otf" id="9_h1cbi"]
+[ext_resource type="Script" path="res://script/bgmworld.gd" id="13_rbow1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpoge"]
 size = Vector2(171.77, 149.769)
@@ -162,6 +163,10 @@ grow_horizontal = 0
 scale = Vector2(0.1, 0.1)
 focus_mode = 0
 icon = ExtResource("6_3hdt3")
+
+[node name="BGMWorld" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+script = ExtResource("13_rbow1")
 
 [connection signal="child_entered_tree" from="." to="CanvasLayer/AmmoLabel/Ammo" method="_on_main_scene_child_entered_tree"]
 [connection signal="child_entered_tree" from="." to="CanvasLayer/ScoreLabel/Score" method="_on_main_scene_child_entered_tree"]
