@@ -76,7 +76,7 @@ theme_override_fonts/font = ExtResource("1_sgsmr")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = SubResource("StyleBoxFlat_mn0dp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gx2iw")
-text = "Close"
+text = "Resume"
 
 [node name="TutorialButton" type="Button" parent="OverlayPanel/VBoxContainer"]
 process_mode = 3
