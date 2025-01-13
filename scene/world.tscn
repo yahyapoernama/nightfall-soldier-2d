@@ -19,19 +19,19 @@ size = Vector2(171.77, 149.769)
 texture = ExtResource("4_mrvmt")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dyq61"]
-bg_color = Color(0, 0.709804, 0.462745, 0)
+bg_color = Color(0.662745, 0.0509804, 0.0745098, 0)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
-border_color = Color(0, 0.709804, 0.462745, 1)
+border_color = Color(0.662745, 0.0509804, 0.0745098, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e78rp"]
-bg_color = Color(0, 0.711377, 0.462383, 1)
+bg_color = Color(0.662745, 0.0509804, 0.0745098, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
