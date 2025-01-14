@@ -10,7 +10,7 @@ func _ready():
 	stream = music
 	
 	# Atur volume (dalam dB, misalnya -10 untuk volume lebih rendah)
-	volume_db = -10
+	#volume_db = -10
 	
 	# Mulai memutar musik
 	play()
