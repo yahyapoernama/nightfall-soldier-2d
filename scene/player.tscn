@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://clursx5m5ve55"]
+[gd_scene load_steps=69 format=3 uid="uid://clursx5m5ve55"]
 
 [ext_resource type="Script" path="res://script/player.gd" id="1_tgypj"]
 [ext_resource type="Texture2D" uid="uid://dwlmnr5gig3e0" path="res://assets/image/player/Dead.png" id="2_5a56y"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://br72fa35bdvpt" path="res://assets/image/player/Reload.png" id="5_vch26"]
 [ext_resource type="Texture2D" uid="uid://dg6mttb5tdohg" path="res://assets/image/player/Shot_1.png" id="6_3s5p1"]
 [ext_resource type="PackedScene" uid="uid://dcp88ua5lpi5y" path="res://scene/weapon.tscn" id="7_rmudg"]
+[ext_resource type="AudioStream" uid="uid://dyaw5g1cou0qg" path="res://assets/sound/SFX-Shot.mp3" id="10_4u0ky"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_avbfw"]
 atlas = ExtResource("2_5a56y")
@@ -462,6 +463,15 @@ shape = SubResource("CapsuleShape2D_66oa4")
 wait_time = 0.5
 
 [node name="Reload" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="SFXShoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_4u0ky")
+
+[node name="SFXShootTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="SFXReloadTimer" type="Timer" parent="."]
 wait_time = 0.5
 
 [connection signal="timeout" from="Shoot" to="." method="_on_shoot_timeout"]
